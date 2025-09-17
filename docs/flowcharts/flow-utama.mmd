@@ -1,0 +1,13 @@
+flowchart TD
+    A([Mulai]) --> B[Menu Utama: 1 Tampil • 2 Tambah • 3 Update • 4 Hapus • 5 Keluar]
+    B --> C{Pilih menu (1-5)?}
+    C -->|1| D[Submenu Tampilkan Data]
+    C -->|2| E[Submenu Tambah Data]
+    C -->|3| F[Submenu Update Data]
+    C -->|4| G[Submenu Delete Data]
+    C -->|5| H[Cetak "Have a nice day."] --> I([Selesai])
+
+    D --> B
+    E --> B
+    F --> B
+    G --> B

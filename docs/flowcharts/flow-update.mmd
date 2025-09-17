@@ -1,0 +1,34 @@
+flowchart TD
+    A[Submenu Update Data] --> B{List karyawan kosong?}
+    B -->|Ya| C[Cetak "Belum ada data karyawan untuk diupdate."] --> Z([Kembali])
+    B -->|Tidak| D[Input Nomor Induk]
+
+    D --> E{Data ditemukan?}
+    E -->|Tidak| F[Cetak "Data karyawan dengan Nomor Induk tersebut tidak ditemukan."] --> Z
+    E -->|Ya| G[Tampilkan data saat ini]
+
+    G --> H[Input Nama (boleh kosong)]
+    H --> I[Input Divisi (boleh kosong)]
+    I --> J[Input Posisi (boleh kosong)]
+    J --> K[Input Status (boleh kosong)]
+
+    K --> L[Input Gaji Pokok (boleh kosong)]
+    L --> M{Kosong?}
+    M -->|Ya| P
+    M -->|Tidak| N{Angka?}
+    N -->|Tidak| L
+    N -->|Ya| O[Set gaji baru] --> P
+
+    P --> Q[Input Email (boleh kosong)]
+    Q --> R{Kosong?}
+    R -->|Ya| U
+    R -->|Tidak| S{Format valid (@)?}
+    S -->|Tidak| Q
+    S -->|Ya| T{Email unik?}
+    T -->|Tidak| Q
+    T -->|Ya| U[Set email baru]
+
+    U --> V[Input Domisili (boleh kosong)]
+    V --> W{Simpan perubahan? (y/n)}
+    W -->|y| X[Cetak "DATA KARYAWAN BERHASIL DIUPDATE."] --> Z
+    W -->|n| Y[Cetak "Perubahan dibatalkan."] --> Z

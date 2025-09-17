@@ -1,0 +1,15 @@
+flowchart TD
+    A([Mulai filter_data]) --> B{List karyawan kosong?}
+    B -->|Ya| C[Cetak "Data karyawan kosong."] --> Z([Kembali])
+    B -->|Tidak| D[Menu filter: 1 Divisi • 2 Status • 3 Domisili • 4 Kembali]
+
+    D --> E{Pilihan valid?}
+    E -->|4| Z
+    E -->|1/2/3| F[Tentukan field]
+    E -->|Lainnya| D
+
+    F --> G[Tampilkan opsi unik]
+    G --> H[Input nilai]
+    H --> I{Nilai valid?}
+    I -->|Tidak| D
+    I -->|Ya| J[Iterasi & tampilkan hasil] --> D

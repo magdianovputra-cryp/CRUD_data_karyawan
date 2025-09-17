@@ -1,0 +1,25 @@
+flowchart TD
+    A[Submenu Tambah Data] --> B{Pilih (1-2)?}
+    B -->|1. Tambah data baru| T1[tambah_karyawan()]
+    B -->|2. Kembali| Z([Kembali ke Menu Utama])
+
+    T1 --> C[Input Nomor Induk (ID-XXX)]
+    C --> D{Format valid (ID-XXX)?}
+    D -->|Tidak| C
+    D -->|Ya| E{Unik di data?}
+    E -->|Tidak| C
+    E -->|Ya| F[Input Nama, Divisi, Posisi(capitalize), Status(capitalize)]
+
+    F --> G[Input Gaji Pokok]
+    G --> H{Gaji angka?}
+    H -->|Tidak| G
+    H -->|Ya| I[Input Email]
+    I --> J{Mengandung @?}
+    J -->|Tidak| I
+    J -->|Ya| K{Email unik?}
+    K -->|Tidak| I
+    K -->|Ya| L[Input Domisili(capitalize)]
+
+    L --> M{Simpan data? (y/n)}
+    M -->|y| N[Append ke list karyawan] --> O[Cetak "DATA KARYAWAN BARU BERHASIL DITAMBAHKAN"] --> P([Selesai Tambah])
+    M -->|n| Q[Cetak "Data tidak jadi ditambahkan"] --> P

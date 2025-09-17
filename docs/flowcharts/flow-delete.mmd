@@ -1,0 +1,8 @@
+flowchart TD
+    A[Submenu Delete Data] --> B[Input Nomor Induk]
+    B --> C{Data ditemukan?}
+    C -->|Tidak| D[Cetak "Data karyawan tidak ditemukan."] --> Z([Kembali])
+    C -->|Ya| E[Tampilkan detail data]
+    E --> F{Hapus data? (y/n)}
+    F -->|y| G[Hapus (pop) dari list] --> H[Cetak "Data karyawan <nama> berhasil dihapus."] --> Z
+    F -->|n| Z

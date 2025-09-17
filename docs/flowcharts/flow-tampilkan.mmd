@@ -1,0 +1,15 @@
+flowchart TD
+    S[Submenu Tampilkan Data] --> P{Pilih (1-3)?}
+    P -->|1. Tampilkan seluruh data| D1[data_karyawan()]
+    P -->|2. Tampilkan berdasarkan filter| F1[filter_data()]
+    P -->|3. Kembali| K([Kembali ke Menu Utama])
+
+    %% data_karyawan
+    D1 --> D2{List karyawan kosong?}
+    D2 -->|Ya| D3[Cetak "Data karyawan kosong."] --> S
+    D2 -->|Tidak| D4[Tampilkan header + tabel semua karyawan] --> S
+
+    %% filter_data entry
+    F1 --> F2{List karyawan kosong?}
+    F2 -->|Ya| F3[Cetak "Data karyawan kosong."] --> S
+    F2 -->|Tidak| L[[Ke flow Filter Data]]
