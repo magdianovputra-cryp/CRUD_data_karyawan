@@ -30,6 +30,7 @@ Simple Phyton-based application untuk mengelola data karyawan, yang terdapat fit
 Data karyawan disimpan dalam list of dictionary. Contoh:
 
 ```python
+[
 {
   "Nomor Induk": "ID-001",
   "Nama Pegawai": "Alisson Becker",
@@ -40,6 +41,7 @@ Data karyawan disimpan dalam list of dictionary. Contoh:
   "Email": "alisson.becker@perusahaan.com",
   "Domisili": "Tangerang"
 }
+]
 
 ```
 ## Stakeholder
