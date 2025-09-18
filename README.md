@@ -60,3 +60,13 @@ Staff HR atau Admin perusahaan sebagai pengguna utama aplikasi
 4. Hapus Data Karyawan
 5. Keluar
 ```
+
+## Cara Menggunakan Aplikasi
+- Download repository
+- Extract file ZIP, setelah itu jalankan aplikasi di Python
+- Install library tabulate jika belum ada
+- Run aplikasi
+- Pilih opsi sesuai angka (1–5)
+- Ikuti instruksi input data, validasi dijalankan otomatis.
+- Untuk keluar, pilih opsi '5'.
+- Data bersifat sementara dan belum disimpan dalam file. Jika program ditutup, data akan hilang.
